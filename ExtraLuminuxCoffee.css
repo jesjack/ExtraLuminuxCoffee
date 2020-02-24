@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,700|Pinyon+Script|Share+Tech+Mono|Ubuntu:300,400,700|ZCOOL+QingKe+HuangYou&display=swap&effect=anaglyph|fire-animation|neon|outline|shadow-multiple|emboss|3d|3d-float');
+@font-face{
+	font-family: Ubuntu-offline;
+	src: url('fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}@font-face{
+	font-family: Alegreya-offline;
+	src: url('fonts/Alegreya/Alegreya-Regular.ttf') format('truetype');
+}@font-face{
+	font-family: PinyonScript-offline;
+	src: url('fonts/Pinyon_Script/PinyonScript-Regular.ttf');
+}@font-face{
+	font-family: ShareTechMono-offline;
+	src: url('fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
+}@font-face{
+	font-family: ZCOOL-offline;
+	src: url('fonts/ZCOOL_QingKe_HuangYou/ZCOOLQingKeHuangYou-Regular.ttf');
+}
+
+/*VARIABLES*/
+:root{
+	/*Fuentes*/
+	--font-ubuntu: 'Ubuntu', Ubuntu-offline;
+	--font-alegreya: 'Alegreya', Alegreya-offline;
+	--font-pinyon: 'Pinyon Script', PinyonScript-offline;
+	--font-mono: 'Share Tech Mono', ShareTechMono-offline;
+	--font-zcool: 'ZCOOL QingKe HuangYou', ZCOOL-offline;
+
+	/*Colores*/
+	--color-orange: orange;
+	--color-orange-dark: darkorange;
+	--color-gold: gold;
+	--color-yellow: yellow;
+	--color-blu: #1B8CF6;
+	--color-blu-dark: #1473CC;
+	--color-rose: #E953CB;
+	--color-rose-dark: #B13D9A;
+	--color-green: #34F16E;
+	--color-green-dark: #27B352;
+	--color-red: #F62424;
+	--color-red-dark: #C01A1A;
+	--color-dark: #2B2B2B;
+	--color-dark-light: #444444;
+	--color-light: #F2F2F2;
+	--color-light-dark: #BBBBBB;
+	--color-orange-transparent: #F58420dd;
+	--color-dark-transparent: #000c;
+
+	/*Medidas*/
+	--med-none: 0rem;
+	--med-mini: .3rem;
+	--med-one: 1rem;
+}
+
+/*GENERAL*/
+*{
+	font-family: var(--font-ubuntu);
+	background-color: var(--color-light);
+	color: var(--color-dark);
+}
+body, html, h1, h2, h3, h4, h5, h6, p, pre, hr{
+	margin: var(--med-none);
+	padding: var(--med-none);
+}
+p{
+	margin: var(--med-mini) var(--med-none) var(--med-none) var(--med-none);
+}
+a{
+	transition-property: color;
+	transition-duration: 0.2s;
+	text-decoration: none;
+}a:link{
+	color: var(--color-orange);
+}a:visited{
+	color: var(--color-orange-dark);
+}a:hover{
+	color: var(--color-gold);
+}a:active{
+	color: var(--color-yellow);
+}
+pre, pre *{
+	font-family: var(--font-mono);
+}
+hr{
+	border-color: black;
+	border-width: calc(var(--med-mini)/3);
+	border-style: solid;
+}
+
+*::selection{
+	background-color: var(--color-orange-transparent);
+	color: var(--color-dark);
+}
+/*Componentes*/
+*[class*="boton"]{
+	color: var(--color-dark)!important;
+}
+.boton-style-3d{
+	transition-property: padding, box-shadow, top, left, background-color;
+	transition-duration: .1s;
+	position: relative;
+	display: inline-block;
+	padding: var(--med-one) var(--med-one) var(--med-one) var(--med-one);
+	font-weight: 700;
+	box-shadow: var(--med-mini) var(--med-mini) var(--color-dark-transparent);
+	margin: var(--med-none) var(--med-mini) var(--med-mini) var(--med-none);
+	left: 0;
+	top: 0;
+}.boton-style-3d:hover{
+	/*transition-property: box-shadow, top, left, padding;*/
+	/*transition-duration: .1s;*/
+	top: var(--med-mini);
+	left: var(--med-mini);
+	box-shadow:0 0;
+	padding: var(--med-one) var(--med-one) var(--med-one) var(--med-one);
+}.boton-style-3d:active{
+	/*transition-property: padding, box-shadow, margin;*/
+	/*transition-duration: .1s;*/
+	box-shadow: 0 0, inset var(--med-mini) var(--med-mini) var(--color-dark-transparent);
+	padding: calc(var(--med-one) + var(--med-mini)) calc(var(--med-one) - var(--med-mini)) calc(var(--med-one) - var(--med-mini)) calc(var(--med-one) + var(--med-mini));
+}
+
+/*Usabilidad*/
+.color-text-yellow{
+	color: var(--color-yellow)!important;
+}.color-text-red{
+	color: var(--color-red)!important;
+}.color-text-blu{
+	color: var(--color-blu)!important;
+}.color-text-rose{
+	color: var(--color-rose)!important;
+}.color-text-green{
+	color: var(--color-green)!important;
+}.color-text-dark{
+	color: var(--color-dark)!important;
+}.color-text-light{
+	color: var(--color-light)!important;
+}
+.color-background-yellow{
+	background-color: var(--color-yellow);
+}*[class*="boton"].color-background-yellow:hover{
+	background-color: var(--color-orange);
+}.color-background-red{
+	background-color: var(--color-red);
+}*[class*="boton"].color-background-red:hover{
+	background-color: var(--color-red-dark);
+}.color-background-blu{
+	background-color: var(--color-blu);
+}*[class*="boton"].color-background-blu:hover{
+	background-color: var(--color-blu-dark);
+}.color-background-rose{
+	background-color: var(--color-rose);
+}*[class*="boton"].color-background-rose:hover{
+	background-color: var(--color-rose-dark);
+}.color-background-green{
+	background-color: var(--color-green);
+}*[class*="boton"].color-background-green:hover{
+	background-color: var(--color-green-dark);
+}.color-background-dark{
+	background-color: var(--color-dark);
+}*[class*="boton"].color-background-dark:hover{
+	background-color: var(--color-dark-light);
+}.color-background-light{
+	background-color: var(--color-light);
+}*[class*="boton"].color-background-light:hover{
+	background-color: var(--color-light-dark);
+}
+
+.font-ubuntu{
+	font-family: var(--font-ubuntu);
+}.font-alegreya{
+	font-family: var(--font-alegreya);
+}.font-pinyon{
+	font-family: var(--font-pinyon);
+}.font-mono{
+	font-family: var(--font-mono);
+}.font-zcool{
+	font-family: var(--font-zcool);
+}
+
+*[class*="flex"]{
+	display: flex;
+}*[class*="flex-group"]{
+	flex-wrap: wrap;
+	justify-content: space-around;
+}.flex-group-1 > *{
+	width: 98%;
+}.flex-group-2 > *{
+	width: calc(50% - 3rem);
+}.flex-group-3 > *{
+	width: calc(100%/3 - 3rem);
+}.flex-group-4 > *{
+	width: calc(25% - 3rem);
+}.flex-group-5 > *{
+	width: calc(20% - 3rem);
+}.flex-group-6 > *{
+	width: calc(100%/6 - 2.7rem);
+}
